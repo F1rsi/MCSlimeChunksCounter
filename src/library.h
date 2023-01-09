@@ -14,10 +14,12 @@ static inline void setSeed(uint64_t *seed, uint64_t value) {
     *seed = (value ^ 0x5deece66d) & ((1ULL << 48) - 1);
 }
 
+
 static inline int next(uint64_t *seed, const int bits) {
     *seed = (*seed * 0x5deece66d + 0xb) & ((1ULL << 48) - 1);
     return (int) ((int64_t)*seed >> (48 - bits));
 }
+
 
 static inline int nextInt(uint64_t *seed, const int n) {
     int bits, val;
