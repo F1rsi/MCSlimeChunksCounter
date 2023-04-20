@@ -1,1 +1,0 @@
-gcc test_time.c -o test_time.exe

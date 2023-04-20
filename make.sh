@@ -1,1 +1,1 @@
-gcc main.c -o MCSlimeChunksCounter.exe
+gcc main.c cubiomes/finders.h -o MCSlimeChunksCounter
