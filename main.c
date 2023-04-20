@@ -16,7 +16,7 @@ int main() {
 	for (int chunk_x = chunk_x_begin; chunk_x != chunk_x_end; chunk_x++) {
 		t = clock();
 		for (int chunk_z = chunk_z_begin; chunk_z != chunk_z_end; chunk_z++) {
-			bool result = isSlimeChunk(0, chunk_x, chunk_z);
+			bool result = isSlimeChunk(0, chunk_x, chunk_z); // Seed equals zero for optimizations.
 			if (result) chunk_slimes_count++;
 		}
 		t = clock() - t;
