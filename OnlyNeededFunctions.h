@@ -1,20 +1,26 @@
 #include <stdint.h>
 
-#define ATTR(...)               __attribute__((__VA_ARGS__))
+// from "rng.h"
+#define ATTR(...) __attribute__((__VA_ARGS__))
 
+// from "rng.h"
 static inline void setSeed(uint64_t *seed, uint64_t value)
 {
-    *seed = (value ^ 0x5deece66d) & ((1ULL << 48) - 1);
+    //*seed = (value ^ 0x5deece66d) & ((1ULL << 48) - 1);
+    *seed = (value ^ 0x5deece66d) & 0xFFFFFFFFFFFF;
 }
 
+// from "rng.h"
 //static inline int next(uint64_t *seed, const int bits)
 static inline int next(uint64_t *seed)
 {
-    *seed = (*seed * 0x5deece66d + 0xb) & ((1ULL << 48) - 1);
-    return (int) ((int64_t)*seed >> 17);
+    //*seed = (*seed * 0x5deece66d + 0xb) & ((1ULL << 48) - 1);
+    *seed = (*seed * 0x5deece66d + 0xb) & 0xFFFFFFFFFFFF;
     //return (int) ((int64_t)*seed >> (48 - bits));
+    return (int) ((int64_t)*seed >> 17);
 }
 
+// from "rng.h"
 //static inline int nextInt(uint64_t *seed, const int n)
 static inline int nextInt(uint64_t *seed) // n = 10
 {
@@ -35,6 +41,7 @@ static inline int nextInt(uint64_t *seed) // n = 10
     return val;
 }
 
+// from "finders.h"
 static inline ATTR(const)
 //int isSlimeChunk(uint64_t seed, int chunkX, int chunkZ)
 int isSlimeChunk(int chunkX, int chunkZ)
