@@ -1,2 +1,2 @@
-gcc main.c -o MCSlimeChunksCounter
+gcc -O2 main.c -o MCSlimeChunksCounter
 

@@ -2,7 +2,6 @@
 #include <stdbool.h>
 #include <time.h>
 
-//#include "cubiomes/finders.h"
 #include "OnlyNeededFunctions.h"
 
 int main() {
