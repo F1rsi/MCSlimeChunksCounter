@@ -46,8 +46,7 @@ static inline ATTR(const)
 //int isSlimeChunk(uint64_t seed, int chunkX, int chunkZ)
 int isSlimeChunk(int chunkX, int chunkZ)
 {
-    uint64_t rnd = 0;
-    rnd += (int)(chunkX * 0x5ac0db);
+    uint64_t rnd = (int)(chunkX * 0x5ac0db);
     rnd += (int)(chunkX * chunkX * 0x4c1906);
     rnd += (int)(chunkZ * 0x5f24f);
     rnd += (int)(chunkZ * chunkZ) * 0x4307a7ULL;
@@ -55,3 +54,4 @@ int isSlimeChunk(int chunkX, int chunkZ)
     setSeed(&rnd, rnd);
     return nextInt(&rnd) == 0;
 }
+

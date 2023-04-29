@@ -6,10 +6,10 @@
 #include "OnlyNeededFunctions.h"
 
 int main() {
-	int chunk_x_begin = -1874999;
-	int chunk_x_end = 1874998;
-	int chunk_z_begin = -1874999;
-	int chunk_z_end = 1874998;
+	const int chunk_x_begin = -1874999;
+	const int chunk_x_end = 1874998;
+	const int chunk_z_begin = -1874999;
+	const int chunk_z_end = 1874998;
 
 	clock_t t;
 
@@ -17,7 +17,7 @@ int main() {
 	for (int chunk_x = chunk_x_begin; chunk_x != chunk_x_end; chunk_x++) {
 		t = clock();
 		for (int chunk_z = chunk_z_begin; chunk_z != chunk_z_end; chunk_z++) {
-			bool result = isSlimeChunk(chunk_x, chunk_z); // Seed equals zero for optimizations.
+			const bool result = isSlimeChunk(chunk_x, chunk_z); // Seed equals zero for optimizations.
 			if (result) chunk_slimes_count++;
 		}
 		t = clock() - t;
