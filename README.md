@@ -1,2 +1,2 @@
 # MCSlimeChunksCounter
-Программа для подсчёта слайм чанков на определённом сиде в Minecraft.
+MCSlimeChunksCounter is a program for counting slime chunks in the world of Minecraft with a certain generation seed.
